@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000"); // Change to your server's IP if needed
+const socket = io("https://2e49-94-44-110-23.ngrok-free.app"); 
 
 function App() {
   const localVideoRef = useRef(null);
@@ -39,7 +39,10 @@ function App() {
     }
 
     peerConnectionRef.current = new RTCPeerConnection({
-      iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        { urls: "turn:relay1.expressturn.com:3478", username: "user", credential: "pass" }
+      ]
     });
 
     stream.getTracks().forEach((track) => {
@@ -70,7 +73,7 @@ function App() {
     <div>
       <h1>Video Chat Demo</h1>
       <div>
-        <video ref={localVideoRef} autoPlay playsInline style={{ width: "45%", border: "1px solid black" }} />
+        <video ref={localVideoRef} muted autoPlay playsInline style={{ width: "45%", border: "1px solid black" }} />
         <video ref={remoteVideoRef} autoPlay playsInline style={{ width: "45%", border: "1px solid black" }} />
       </div>
       {!isConnected ? <button onClick={startVideoChat}>Start Video Chat</button> : <p>Connected!</p>}
