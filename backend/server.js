@@ -7,19 +7,27 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Allow frontend
+    origin: "http://localhost:5173", // Change to your frontend URL if needed
     methods: ["GET", "POST"]
   }
 });
 
 app.use(cors());
-app.get("/", (req, res) => res.send("Voice Chat Server Running"));
+app.get("/", (req, res) => res.send("Video Chat Server Running"));
 
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
-  socket.on("voice", (data) => {
-    socket.broadcast.emit("voice", data);
+  socket.on("offer", (data) => {
+    socket.broadcast.emit("offer", data);
+  });
+
+  socket.on("answer", (data) => {
+    socket.broadcast.emit("answer", data);
+  });
+
+  socket.on("ice-candidate", (data) => {
+    socket.broadcast.emit("ice-candidate", data);
   });
 
   socket.on("disconnect", () => {
