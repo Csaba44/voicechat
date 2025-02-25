@@ -1,0 +1,134 @@
+.block {
+    margin-top: 70px;
+    text-align: center;
+    position: relative;
+}
+
+.kartya {
+    background: rgba(25, 32, 45, 0.95);
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgb(55, 65, 80);
+    width: 30%;
+    padding: 40px;
+    margin: auto;
+    margin-top: 80px;
+    text-align: left;
+    position: relative;
+    top: -40px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gomb {
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgb(42, 157, 89);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: white;
+    border: none;
+}
+
+.gomb:hover {
+    background-color: rgb(36, 132, 76);
+    transform: scale(1.05);
+}
+
+a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: rgb(100, 160, 255);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgb(140, 180, 255);
+}
+
+@media (max-width: 1024px) {
+    .kartya {
+        width: 50%;
+        padding: 30px;
+        margin-top: 70px;
+        top: -30px;
+    }
+
+    .gomb {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .kartya {
+        width: 70%;
+        padding: 20px;
+        margin-top: 50px;
+        top: -20px;
+    }
+
+    .gomb {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kartya {
+        width: 90%;
+        padding: 15px;
+        margin-top: 20px;
+        top: -10px;
+    }
+
+    .gomb {
+        width: 100%;
+    }
+}
+
+.label {
+  margin-bottom: 8px;
+  color: rgb(220, 225, 230);
+  font-size: medium;
+}
+
+.textField {
+  background-color: rgb(20, 24, 30);
+  border: 2px solid rgb(70, 80, 95);
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+}
+
+.textField:focus {
+  outline: none !important; 
+  border: 2px solid rgb(40, 100, 230);
+  background-color: rgb(25, 28, 35);
+  color: white;
+}
+
+.textField::placeholder {
+  color: rgb(100, 110, 130);
+  opacity: 1;
+}
+
+
+body {
+    opacity: 0; 
+    background-color: rgb(16, 18, 24); 
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

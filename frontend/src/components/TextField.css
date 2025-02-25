@@ -1,4 +1,22 @@
 .label
 {
   margin-bottom: 8px;
+  color: white;
+  font-size: medium;
+}
+.textField
+{
+  background-color: rgb(16, 18, 24);
+  border: 2px solid rgb(61, 68, 77);
+}
+.textField:focus
+{
+  outline: none !important; 
+  border: 2px solid rgb(30, 83, 229);
+  background-color: rgb(16, 18, 24);
+  color: white;
+}
+.textField::placeholder {
+  color: rgb(61, 68, 77); 
+  opacity: 1;
 }
