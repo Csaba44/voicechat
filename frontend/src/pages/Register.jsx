@@ -5,7 +5,7 @@ import TextField from '../components/TextField'
 function Register() {
   return (
     <>
-      <div id="overlay">
+      <div className="login-page">
         <div className='block'>
           <h1>Baxtalo the aves ande RomnyiVoice!</h1>
           <div className='kartya'>

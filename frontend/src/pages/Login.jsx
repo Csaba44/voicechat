@@ -5,6 +5,7 @@ import TextField from '../components/TextField'
 function Login() {
   return (
     <>
+      <div className="login-page">
       <div className='block'>
         <h1>Baxtalo the aves ande RomnyiVoice!</h1>
         <div className='kartya'>
@@ -14,6 +15,7 @@ function Login() {
           <button className='btn btn-success gomb'>Bejelentkezés</button>
         </div>
       </div>
+    </div>
     </>
   )
 }
